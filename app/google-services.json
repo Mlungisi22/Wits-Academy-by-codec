@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1095670391772",
+    "project_id": "login-2a365",
+    "storage_bucket": "login-2a365.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095670391772:android:6f0be2040ceced3e0b6519",
+        "android_client_info": {
+          "package_name": "com.example.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095670391772-klp463o99dfo19nfspnqo80c5saf5bsd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdvqnYccekr-1aSQ0h8A7wSQ9A8h0C7KE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095670391772-klp463o99dfo19nfspnqo80c5saf5bsd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
