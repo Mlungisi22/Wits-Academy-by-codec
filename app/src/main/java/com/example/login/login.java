@@ -53,10 +53,10 @@ public class login extends AppCompatActivity {
         if(TextUtils.isEmpty(email)){
             eLoginEmail.setError("Email cannot be empty");
             eLoginEmail.requestFocus();
-        }else if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        }/*else if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             eLoginEmail.setError("Enter correct email");
             eLoginEmail.requestFocus();
-        }
+        }*/
         else if(TextUtils.isEmpty(password)){
             eLoginPassword.setError("Password cannot be empty");
             eLoginPassword.requestFocus();

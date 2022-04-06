@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this,login.class));
         });
     }
-    @Override
+    @Override    
 
     //I added this comment
     protected void onStart(){
