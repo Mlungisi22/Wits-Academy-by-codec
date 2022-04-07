@@ -1,5 +1,5 @@
 package com.example.login;
-// this is thapelo's first comment
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,15 +48,14 @@ public class login extends AppCompatActivity {
 
     private void loginUser() {
         String email=eLoginEmail.getText().toString();
+        email = email.trim();
         String password=eLoginPassword.getText().toString();
+        password = password.trim();
 
         if(TextUtils.isEmpty(email)){
             eLoginEmail.setError("Email cannot be empty");
             eLoginEmail.requestFocus();
-        }/*else if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            eLoginEmail.setError("Enter correct email");
-            eLoginEmail.requestFocus();
-        }*/
+        }
         else if(TextUtils.isEmpty(password)){
             eLoginPassword.setError("Password cannot be empty");
             eLoginPassword.requestFocus();
