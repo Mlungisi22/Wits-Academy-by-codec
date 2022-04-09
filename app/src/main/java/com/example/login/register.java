@@ -2,12 +2,14 @@ package com.example.login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,8 +20,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class register extends AppCompatActivity {
-    TextInputEditText eRegEmail;
-    TextInputEditText eRegPassword;
+    EditText eRegEmail;
+    EditText eRegPassword;
     TextView tvLoginHere;
     Button btnRegister;
 
@@ -28,6 +30,8 @@ public class register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        getWindow().setStatusBarColor(ContextCompat.getColor(register.this, R.color.teal_700));
 
         eRegEmail=findViewById(R.id.etRegEmail);
         eRegPassword=findViewById(R.id.etRegPass);
