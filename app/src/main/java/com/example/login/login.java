@@ -9,6 +9,8 @@ import android.text.TextUtils;
 import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,11 +32,16 @@ public class login extends AppCompatActivity {
     TextView tvRegisterHere;
     Button btnLogin;
 
+    RadioGroup radioGroup;
+    RadioButton radioButton;
+
     FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        radioGroup = findViewById(R.id.radioGroup1);
 
         eLoginEmail=findViewById(R.id.etLoginEmail);
         eLoginPassword=findViewById(R.id.etLoginPass);
@@ -52,6 +59,13 @@ public class login extends AppCompatActivity {
     }
 
     private void loginUser() {
+
+        int radioID = radioGroup.getCheckedRadioButtonId();
+        radioButton = findViewById(radioID);
+
+        String occupation = radioButton.getText().toString();//Subject to change
+        Toast.makeText(login.this,occupation,Toast.LENGTH_SHORT).show();
+
         String email=eLoginEmail.getText().toString();
         String password=eLoginPassword.getText().toString();
 
@@ -74,20 +88,26 @@ public class login extends AppCompatActivity {
                                 .child("occupation").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                String occupation;
+                                String occupationComp;
                                 try {
-                                    occupation = snapshot.getValue(String.class).toString().trim();
+                                    occupationComp = snapshot.getValue(String.class).toString().trim();
                                 }
                                 catch(Exception e) {
-                                    occupation="";
+                                    occupationComp="";
                                 }
 
                                 Toast.makeText(login.this,occupation,Toast.LENGTH_SHORT).show();
-                                if(occupation.equals("Teacher")){
-                                    startActivity(new Intent(login.this,MainActivity.class));//Go to the teachers home page
+                                if(occupation.equals(occupationComp)){
+                                    if(occupation.equals("Teacher")){
+                                        startActivity(new Intent(login.this,MainActivity.class));//Go to the teachers home page
+                                    }else if(occupation.equals("Student")){
+                                        startActivity(new Intent(login.this,Student_Homepage.class));//Go the student homepage
+                                    }
                                 }else{
-                                    startActivity(new Intent(login.this,Student_Homepage.class));//Go the student homepage
+                                    Toast.makeText(login.this,"No "+occupation+"'s account with those details",Toast.LENGTH_SHORT).show();
+
                                 }
+
                             }
 
                             @Override

@@ -10,6 +10,8 @@ import android.text.TextUtils;
 import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +29,9 @@ public class register extends AppCompatActivity {
 
     Button btnRegister;
 
+    RadioGroup radioGroup;
+    RadioButton radioButton;
+
     FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,9 @@ public class register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         getWindow().setStatusBarColor(ContextCompat.getColor(register.this, R.color.teal_700));
+
+        radioGroup = findViewById(R.id.radioGroup);
+
 
         eRegEmail=findViewById(R.id.etRegEmail);
         eRegPassword=findViewById(R.id.etRegPass);
@@ -52,7 +60,12 @@ public class register extends AppCompatActivity {
     }
 
     private void createUser() {
-        String occupation = "Teacher";//Subject to change
+
+        int radioID = radioGroup.getCheckedRadioButtonId();
+        radioButton = findViewById(radioID);
+
+        String occupation = radioButton.getText().toString();
+
         String email = eRegEmail.getText().toString().trim();
         String password = eRegPassword.getText().toString().trim();
 
@@ -75,7 +88,12 @@ public class register extends AppCompatActivity {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if(task.isSuccessful()){
-                                            Toast.makeText(register.this,"User registered successfully",Toast.LENGTH_SHORT).show();
+                                            if(occupation.equals("Teacher")){
+                                                Toast.makeText(register.this,"Teacher's account registered successfully",Toast.LENGTH_SHORT).show();
+                                            }else{
+                                                Toast.makeText(register.this,"Student's account registered successfully",Toast.LENGTH_SHORT).show();
+                                            }
+
                                             startActivity(new Intent(register.this,login.class));
                                         }else{
                                             Toast.makeText(register.this,"Registration Error: "+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
