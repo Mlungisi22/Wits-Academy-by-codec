@@ -15,7 +15,7 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
-        android:src="@drawable/chan"/>
+        android:src="@drawable/back"/>
 
     <LinearLayout
         android:layout_width="match_parent"

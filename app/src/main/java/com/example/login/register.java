@@ -18,11 +18,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class register extends AppCompatActivity {
     EditText eRegEmail;
     EditText eRegPassword;
     TextView tvLoginHere;
+
     Button btnRegister;
 
     FirebaseAuth mAuth;
@@ -50,8 +52,9 @@ public class register extends AppCompatActivity {
     }
 
     private void createUser() {
-        String email = eRegEmail.getText().toString();
-        String password = eRegPassword.getText().toString();
+        String occupation = "Teacher";//Subject to change
+        String email = eRegEmail.getText().toString().trim();
+        String password = eRegPassword.getText().toString().trim();
 
         if(TextUtils.isEmpty(email)){
             eRegEmail.setError("Email cannot be empty");
@@ -64,8 +67,23 @@ public class register extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                Toast.makeText(register.this,"User registered successfully",Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(register.this,login.class));
+                                User user = new User(occupation,password,email);
+
+                                FirebaseDatabase.getInstance().getReference("Users")
+                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            Toast.makeText(register.this,"User registered successfully",Toast.LENGTH_SHORT).show();
+                                            startActivity(new Intent(register.this,login.class));
+                                        }else{
+                                            Toast.makeText(register.this,"Registration Error: "+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+
+
                             }else{
                                 Toast.makeText(register.this,"Registration Error: "+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
 
