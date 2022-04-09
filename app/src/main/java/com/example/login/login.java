@@ -2,12 +2,14 @@ package com.example.login;
 // this is thapelo's first comment
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,8 +22,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.regex.Pattern;
 
 public class login extends AppCompatActivity {
-    TextInputEditText eLoginEmail;
-    TextInputEditText eLoginPassword;
+    EditText eLoginEmail;
+    EditText eLoginPassword;
     TextView tvRegisterHere;
     Button btnLogin;
 
@@ -30,6 +32,8 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getWindow().setStatusBarColor(ContextCompat.getColor(login.this, R.color.teal_700));
+
 
         eLoginEmail=findViewById(R.id.etLoginEmail);
         eLoginPassword=findViewById(R.id.etLoginPass);
@@ -53,10 +57,10 @@ public class login extends AppCompatActivity {
         if(TextUtils.isEmpty(email)){
             eLoginEmail.setError("Email cannot be empty");
             eLoginEmail.requestFocus();
-        }else if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        }/*else if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             eLoginEmail.setError("Enter correct email");
             eLoginEmail.requestFocus();
-        }
+        }*/
         else if(TextUtils.isEmpty(password)){
             eLoginPassword.setError("Password cannot be empty");
             eLoginPassword.requestFocus();

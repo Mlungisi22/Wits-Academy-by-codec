@@ -1,33 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
+
+
     <TextView
-        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome, You are logged in "
+        android:text="Wits Academy"
+        android:textColor="@color/teal_700"
+        android:textStyle="bold|italic"
         android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="380dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:background="@color/white"
+        android:elevation="80dp"
+        android:text="Click here to create a module"
+        android:textColor="@color/teal_700" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        android:background="@color/teal_700"
+        android:text="Search" />
+
+    <EditText
+        android:id="@+id/searching_bar"
+        android:layout_width="300dp"
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"
+        android:hint="Search for a module here"
+        android:layout_toRightOf="@+id/btnSearch"
+        />
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Logout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="690dp"
+        android:textColor="@color/teal_700"
+        android:background="@color/white"
+        android:text="Logout" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
