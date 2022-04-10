@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/27748/AndroidStudioProjects/Wits-Academy-by-codec/app/src/main/res/layout/activity_add_module.xml" value="0.25" />
         <entry key="..\:/Users/27748/AndroidStudioProjects/Wits-Academy-by-codec/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/27748/AndroidStudioProjects/Wits-Academy-by-codec/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/27748/AndroidStudioProjects/Wits-Academy-by-codec/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/27748/AndroidStudioProjects/Wits-Academy-by-codec/app/src/main/res/layout/list_item.xml" value="0.1" />
+        <entry key="..\:/Users/27748/AndroidStudioProjects/Wits-Academy-by-codec/app/src/main/res/menu/menu_options.xml" value="0.264" />
       </map>
     </option>
   </component>

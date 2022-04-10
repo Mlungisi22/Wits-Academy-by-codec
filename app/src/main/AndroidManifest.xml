@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
         <activity
+            android:name=".addModule"
+            android:exported="false" />
+        <activity
             android:name=".register"
             android:exported="false" />
         <activity
