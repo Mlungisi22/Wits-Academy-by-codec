@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".reply_question"
+    android:orientation="vertical"
+    android:background="#ededed">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_margin="18dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/reply_question"
+                android:hint=" Type Answer"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:background="#ededed"
+                android:paddingLeft="5dp"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_marginTop="1dp"
+            android:id="@+id/reply_submit"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="POST"
+            android:textColor="@color/black"
+            android:background="@color/teal_200"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            />
+        <Button
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/reply_go_back"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="BACK"
+            android:textColor="@color/black"
+            android:background="@color/teal_200"
+
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>

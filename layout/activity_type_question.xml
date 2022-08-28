@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".type_question"
+    android:orientation="vertical"
+    android:background="#ededed">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="18dp"
+            >
+            <EditText
+                android:id="@+id/type_question_heading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Type heading"
+                android:paddingLeft="8dp"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black"
+                android:background="#ededed"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginBottom="18dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/type_question"
+                android:hint="Type question "
+                android:paddingLeft="8dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:background="#ededed"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/type_submit_question"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="50dp"
+            android:text="POST"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/black"
+            android:background="@color/teal_200"
+            />
+        <Button
+            android:id="@+id/question_go_back"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="50dp"
+            android:text="Back"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/black"
+            android:background="@color/teal_200"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>

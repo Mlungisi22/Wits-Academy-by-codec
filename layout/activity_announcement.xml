@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".announcement">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Make an Announcement to your Students"
+        android:textColor="@color/teal_700"
+        android:textSize="21sp"
+        android:id="@+id/ann"
+        android:layout_centerHorizontal="true"/>
+
+
+    <EditText
+        android:layout_width="380dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/postTxt"
+        android:hint="Type your post here..."
+        android:layout_below="@+id/ann"
+        android:layout_marginTop="0dp"/>
+
+    <Button
+        android:layout_width="380dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:text="post"
+        android:id="@+id/btnPost"
+        android:textColor="@color/black"
+        android:background="@color/teal_700"
+        android:layout_below="@+id/postTxt"/>
+
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Below you can view your previous posts"
+        android:textColor="@color/teal_700"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/t"
+        android:layout_below="@id/btnPost"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recAnnounce1"
+        android:layout_width="380dp"
+        android:layout_height="280dp"
+        android:layout_below="@+id/t"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+</RelativeLayout>

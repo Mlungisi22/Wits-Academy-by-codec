@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Teacher_New_Module">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create a Course"
+            android:layout_centerHorizontal="true"
+            android:textSize="30dp"
+            android:textColor="@color/teal_700"/>
+
+
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/moduleName"
+            android:layout_alignParentStart="true"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:id="@+id/progress_bar_upload_image"/>
+
+
+
+        <EditText
+            android:id="@+id/moduleName"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="Course Name"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="300dp"/>
+
+        <EditText
+            android:id="@+id/moduleCode"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="Course Code"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/moduleName"/>
+
+        <EditText
+            android:id="@+id/moduleTName"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="Instructor Name"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/moduleCode"/>
+
+        <Button
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:id="@+id/createCourse"
+            android:layout_marginTop="20dp"
+            android:background="@color/teal_700"
+            android:layout_below="@+id/moduleTName"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation"
+        app:itemBackground="@color/white"
+        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
+        app:menu="@menu/teacher_menu"
+        android:layout_gravity="bottom"
+        />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dashboard"
+        android:title="Dashboard"
+        android:icon="@drawable/ic_dashboard"/>
+
+    <item
+        android:id="@+id/student_courses"
+        android:title="My Courses"
+        android:icon="@drawable/ic_courses"/>
+
+    <item
+        android:id="@+id/student_account"
+        android:title="Account"
+        android:icon="@drawable/ic_account"/>
+</menu>

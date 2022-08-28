@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".addModule">
+
+
+    <TextView
+        android:id="@+id/intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Creating a Course!"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"
+        android:textColor="@color/teal_700"/>
+
+    <ImageButton
+        android:layout_width="380dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/intro"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/modulePic"
+        android:background="@drawable/ic_baseline_upload"
+        android:layout_marginTop="40dp"/>
+
+
+    <EditText
+        android:id="@+id/moduleName"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:hint="Course Name"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="300dp"/>
+
+    <EditText
+        android:id="@+id/moduleCode"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:hint="Course Code"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/moduleName"/>
+
+    <EditText
+        android:id="@+id/moduleTName"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:hint="Instructor Name"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/moduleCode"/>
+
+    <Button
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:text="Create"
+        android:id="@+id/createCourse"
+        android:layout_marginTop="20dp"
+        android:background="@color/teal_700"
+        android:layout_below="@+id/moduleTName"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"/>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:src="@drawable/textgram1649550175"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>

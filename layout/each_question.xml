@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="4dp"
+    android:layout_marginLeft="6dp"
+    android:layout_marginRight="6dp"
+    android:padding="0dp"
+    android:id="@+id/eachitemlayout"
+    android:background="@color/white"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:background="@drawable/account"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/heading_for_each_question"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="heading"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:textSize="20dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/who_created_question"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="user"
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/question_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:paddingLeft="10dp"
+        android:paddingTop="2dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        />
+</LinearLayout>
+
+<!--android:background="@drawable/materialbg"-->
