@@ -1,0 +1,12 @@
+ .idea/misc.xml                                     | 29 [32m+++++[m[31m----------[m
+ app/src/main/AndroidManifest.xml                   | 16 [32m++++[m[31m-----[m
+ .../com/example/login/StudentCourse_content.java   | 11 [32m+++++[m[31m-[m
+ .../com/example/login/TeacherCourse_content.java   | 12 [32m++++[m[31m---[m
+ .../java/com/example/login/TeacherCourses.java     |  1 [32m+[m
+ .../main/java/com/example/login/announcement.java  | 41 [32m++++++++++++++++++++++[m
+ .../java/com/example/login/checkAnnouncements.java | 32 [32m+++++++++++++++++[m
+ app/src/main/java/com/example/login/post.java      | 16 [32m+++++++++[m
+ app/src/main/res/layout/activity_announcement.xml  |  1 [32m+[m
+ .../res/layout/activity_check_announcements.xml    | 36 [32m+++++++++++++++++++[m
+ .../res/layout/activity_student_course_content.xml | 21 [32m+++++++++[m[31m--[m
+ 11 files changed, 180 insertions(+), 36 deletions(-)

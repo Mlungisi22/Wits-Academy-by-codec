@@ -1,0 +1,212 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > createQuiz</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+    @import "../../.css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../.js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.login</a>
+</div>
+
+<h1>Coverage Summary for Class: createQuiz (com.example.login)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">createQuiz</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/12)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">createQuiz$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/21)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/33)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.example.login;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import androidx.appcompat.app.AppCompatActivity;
+<i class="no-highlight">4</i>&nbsp;
+<i class="no-highlight">5</i>&nbsp;import android.os.Bundle;
+<i class="no-highlight">6</i>&nbsp;import android.util.Log;
+<i class="no-highlight">7</i>&nbsp;import android.view.View;
+<i class="no-highlight">8</i>&nbsp;import android.widget.Button;
+<i class="no-highlight">9</i>&nbsp;import android.widget.EditText;
+<i class="no-highlight">10</i>&nbsp;import android.widget.TextView;
+<i class="no-highlight">11</i>&nbsp;import android.widget.Toast;
+<i class="no-highlight">12</i>&nbsp;
+<i class="no-highlight">13</i>&nbsp;import com.google.firebase.database.DatabaseReference;
+<i class="no-highlight">14</i>&nbsp;import com.google.firebase.database.FirebaseDatabase;
+<i class="no-highlight">15</i>&nbsp;
+<i class="no-highlight">16</i>&nbsp;import org.w3c.dom.Text;
+<i class="no-highlight">17</i>&nbsp;
+<i class="no-highlight">18</i>&nbsp;import java.util.ArrayList;
+<i class="no-highlight">19</i>&nbsp;
+<b class="nc"><i class="no-highlight">20</i>&nbsp;public class createQuiz extends AppCompatActivity {</b>
+<i class="no-highlight">21</i>&nbsp;    EditText addQuestion, addResponse, addOpt1, addOpt2, addOpt3, addOpt4, qNum;
+<i class="no-highlight">22</i>&nbsp;   // public ArrayList&lt;quizModel&gt;  quizModelArrayList;
+<i class="no-highlight">23</i>&nbsp;    Button addToList;
+<i class="no-highlight">24</i>&nbsp;
+<i class="no-highlight">25</i>&nbsp;
+<i class="no-highlight">26</i>&nbsp;    @Override
+<i class="no-highlight">27</i>&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc"><i class="no-highlight">28</i>&nbsp;        super.onCreate(savedInstanceState);</b>
+<b class="nc"><i class="no-highlight">29</i>&nbsp;        setContentView(R.layout.activity_create_quiz);</b>
+<i class="no-highlight">30</i>&nbsp;
+<b class="nc"><i class="no-highlight">31</i>&nbsp;        addQuestion = findViewById(R.id.createQuestion);</b>
+<b class="nc"><i class="no-highlight">32</i>&nbsp;        addResponse = findViewById(R.id.createResponse);</b>
+<b class="nc"><i class="no-highlight">33</i>&nbsp;        addOpt1 = findViewById(R.id.createOption1);</b>
+<b class="nc"><i class="no-highlight">34</i>&nbsp;        addOpt2 = findViewById(R.id.createOption2);</b>
+<b class="nc"><i class="no-highlight">35</i>&nbsp;        addOpt3 = findViewById(R.id.createOption3);</b>
+<b class="nc"><i class="no-highlight">36</i>&nbsp;        addOpt4 = findViewById(R.id.createOption4);</b>
+<b class="nc"><i class="no-highlight">37</i>&nbsp;        addToList = findViewById(R.id.addQuestionBtn);</b>
+<b class="nc"><i class="no-highlight">38</i>&nbsp;        qNum = findViewById(R.id.qNum);</b>
+<i class="no-highlight">39</i>&nbsp;
+<i class="no-highlight">40</i>&nbsp;
+<i class="no-highlight">41</i>&nbsp;       // quizModelArrayList = new ArrayList&lt;&gt;();
+<i class="no-highlight">42</i>&nbsp;
+<i class="no-highlight">43</i>&nbsp;
+<b class="nc"><i class="no-highlight">44</i>&nbsp;        addToList.setOnClickListener(new View.OnClickListener() {</b>
+<i class="no-highlight">45</i>&nbsp;            @Override
+<i class="no-highlight">46</i>&nbsp;            public void onClick(View view) {
+<b class="nc"><i class="no-highlight">47</i>&nbsp;                String question =addQuestion.getText().toString();//The quiz question that will be asked in the quiz</b>
+<b class="nc"><i class="no-highlight">48</i>&nbsp;                String response = addResponse.getText().toString();//the answer to the quiz questoin</b>
+<b class="nc"><i class="no-highlight">49</i>&nbsp;                System.out.println(response);</b>
+<i class="no-highlight">50</i>&nbsp;                //The 4 lines below are the quiz options that the user will see when the quiz runs
+<b class="nc"><i class="no-highlight">51</i>&nbsp;                String option1 = addOpt1.getText().toString();//getting the first option and storing it in a string so it can be saved into the database</b>
+<b class="nc"><i class="no-highlight">52</i>&nbsp;                String option2 = addOpt2.getText().toString();//Adding the second option and ...</b>
+<b class="nc"><i class="no-highlight">53</i>&nbsp;                String option3 = addOpt3.getText().toString();//Adding the third optionand ...</b>
+<b class="nc"><i class="no-highlight">54</i>&nbsp;                String option4 = addOpt4.getText().toString();//Adding the fourth option and ...</b>
+<b class="nc"><i class="no-highlight">55</i>&nbsp;                String qNumber = qNum.getText().toString();//the question number</b>
+<b class="nc"><i class="no-highlight">56</i>&nbsp;                String coursecode=getIntent().getStringExtra(&quot;course_code&quot;);</b>
+<b class="nc"><i class="no-highlight">57</i>&nbsp;                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(&quot;Questions&quot;).child(coursecode).child(&quot;QuizOne&quot;).child(qNumber);</b>
+<b class="nc"><i class="no-highlight">58</i>&nbsp;                quizModel QuizQ = new quizModel(question, option1, option2, option3, option4, response);//Adding the quiz question to the database</b>
+<b class="nc"><i class="no-highlight">59</i>&nbsp;                databaseReference.setValue(QuizQ);</b>
+<i class="no-highlight">60</i>&nbsp;
+<i class="no-highlight">61</i>&nbsp;                //the lines below are clearing the textview which were collecting the previous quiz data
+<b class="nc"><i class="no-highlight">62</i>&nbsp;                addOpt1.getText().clear();</b>
+<b class="nc"><i class="no-highlight">63</i>&nbsp;                addOpt2.getText().clear();</b>
+<b class="nc"><i class="no-highlight">64</i>&nbsp;                addOpt3.getText().clear();</b>
+<b class="nc"><i class="no-highlight">65</i>&nbsp;                addOpt4.getText().clear();</b>
+<b class="nc"><i class="no-highlight">66</i>&nbsp;                addQuestion.getText().clear();</b>
+<b class="nc"><i class="no-highlight">67</i>&nbsp;                addResponse.getText().clear();</b>
+<b class="nc"><i class="no-highlight">68</i>&nbsp;                qNum.getText().clear();</b>
+<b class="nc"><i class="no-highlight">69</i>&nbsp;                Toast.makeText(createQuiz.this,&quot;Question &quot;+ qNumber +&quot; Has been added&quot;,Toast.LENGTH_SHORT).show();//Questoin succesfully added</b>
+<i class="no-highlight">70</i>&nbsp;
+<i class="no-highlight">71</i>&nbsp;
+<i class="no-highlight">72</i>&nbsp;            }
+<i class="no-highlight">73</i>&nbsp;        });
+<i class="no-highlight">74</i>&nbsp;
+<i class="no-highlight">75</i>&nbsp;
+<i class="no-highlight">76</i>&nbsp;    }
+<i class="no-highlight">77</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+<<<<<<< HEAD
+    <div style="float:right;">generated on 2022-05-31 15:04</div>
+=======
+    <div style="float:right;">generated on 2022-05-31 17:08</div>
+>>>>>>> thapelo
+</div>
+</body>
+</html>

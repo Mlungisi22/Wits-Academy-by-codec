@@ -1,0 +1,267 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Teacher_New_Module</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+    @import "../../.css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../.js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.login</a>
+</div>
+
+<h1>Coverage Summary for Class: Teacher_New_Module (com.example.login)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Teacher_New_Module</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/45)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Teacher_New_Module$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/50)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.example.login;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import androidx.annotation.NonNull;
+<i class="no-highlight">4</i>&nbsp;import androidx.annotation.Nullable;
+<i class="no-highlight">5</i>&nbsp;import androidx.appcompat.app.AppCompatActivity;
+<i class="no-highlight">6</i>&nbsp;import androidx.core.content.ContextCompat;
+<i class="no-highlight">7</i>&nbsp;
+<i class="no-highlight">8</i>&nbsp;import android.content.ContentResolver;
+<i class="no-highlight">9</i>&nbsp;import android.content.Intent;
+<i class="no-highlight">10</i>&nbsp;import android.net.Uri;
+<i class="no-highlight">11</i>&nbsp;import android.os.Bundle;
+<i class="no-highlight">12</i>&nbsp;import android.os.Handler;
+<i class="no-highlight">13</i>&nbsp;import android.text.TextUtils;
+<i class="no-highlight">14</i>&nbsp;import android.view.View;
+<i class="no-highlight">15</i>&nbsp;import android.webkit.MimeTypeMap;
+<i class="no-highlight">16</i>&nbsp;import android.widget.Button;
+<i class="no-highlight">17</i>&nbsp;import android.widget.EditText;
+<i class="no-highlight">18</i>&nbsp;import android.widget.ImageView;
+<i class="no-highlight">19</i>&nbsp;import android.widget.ProgressBar;
+<i class="no-highlight">20</i>&nbsp;import android.widget.Toast;
+<i class="no-highlight">21</i>&nbsp;
+<i class="no-highlight">22</i>&nbsp;import com.google.android.gms.tasks.OnFailureListener;
+<i class="no-highlight">23</i>&nbsp;import com.google.android.gms.tasks.OnSuccessListener;
+<i class="no-highlight">24</i>&nbsp;import com.google.android.material.bottomnavigation.BottomNavigationView;
+<i class="no-highlight">25</i>&nbsp;import com.google.firebase.auth.FirebaseAuth;
+<i class="no-highlight">26</i>&nbsp;import com.google.firebase.auth.FirebaseUser;
+<i class="no-highlight">27</i>&nbsp;import com.google.firebase.database.DatabaseReference;
+<i class="no-highlight">28</i>&nbsp;import com.google.firebase.database.FirebaseDatabase;
+<i class="no-highlight">29</i>&nbsp;import com.google.firebase.storage.FirebaseStorage;
+<i class="no-highlight">30</i>&nbsp;import com.google.firebase.storage.OnProgressListener;
+<i class="no-highlight">31</i>&nbsp;import com.google.firebase.storage.StorageReference;
+<i class="no-highlight">32</i>&nbsp;import com.google.firebase.storage.UploadTask;
+<i class="no-highlight">33</i>&nbsp;
+<b class="nc"><i class="no-highlight">34</i>&nbsp;public class Teacher_New_Module extends AppCompatActivity {</b>
+<i class="no-highlight">35</i>&nbsp;    EditText modName;
+<i class="no-highlight">36</i>&nbsp;    EditText modCode;
+<i class="no-highlight">37</i>&nbsp;    EditText modTeach,imagename;
+<i class="no-highlight">38</i>&nbsp;    Button createMod,chooseim,uploadim;
+<i class="no-highlight">39</i>&nbsp;    FirebaseAuth mAuth;
+<i class="no-highlight">40</i>&nbsp;    DatabaseReference databaseReference,databaseReference1;
+<i class="no-highlight">41</i>&nbsp;    BottomNavigationView bottomNavigationView;
+<i class="no-highlight">42</i>&nbsp;    @Override
+<i class="no-highlight">43</i>&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc"><i class="no-highlight">44</i>&nbsp;        super.onCreate(savedInstanceState);</b>
+<b class="nc"><i class="no-highlight">45</i>&nbsp;        setContentView(R.layout.activity_teacher_new_module);</b>
+<b class="nc"><i class="no-highlight">46</i>&nbsp;        getWindow().setStatusBarColor(ContextCompat.getColor(Teacher_New_Module.this, R.color.teal_700));</b>
+<i class="no-highlight">47</i>&nbsp;
+<b class="nc"><i class="no-highlight">48</i>&nbsp;        bottomNavigationView=findViewById(R.id.bottom_navigation);</b>
+<b class="nc"><i class="no-highlight">49</i>&nbsp;        bottomNavigationView.setSelectedItemId(R.id.add_module);</b>
+<b class="nc"><i class="no-highlight">50</i>&nbsp;        bottomNavigationView.setOnNavigationItemSelectedListener(item -&gt; {</b>
+<b class="nc"><i class="no-highlight">51</i>&nbsp;            switch (item.getItemId()){</b>
+<i class="no-highlight">52</i>&nbsp;                case R.id.teacher_courses:
+<b class="nc"><i class="no-highlight">53</i>&nbsp;                    startActivity(new Intent(Teacher_New_Module.this,TeacherCourses.class).putExtra(&quot;activity&quot;,&quot;new_module&quot;));</b>
+<b class="nc"><i class="no-highlight">54</i>&nbsp;                    overridePendingTransition(0,0);</b>
+<b class="nc"><i class="no-highlight">55</i>&nbsp;                    return true;</b>
+<i class="no-highlight">56</i>&nbsp;                case R.id.add_module:
+<b class="nc"><i class="no-highlight">57</i>&nbsp;                    return true;</b>
+<i class="no-highlight">58</i>&nbsp;                case R.id.teacher_account:
+<b class="nc"><i class="no-highlight">59</i>&nbsp;                    startActivity(new Intent(Teacher_New_Module.this,TeacherAccount.class).putExtra(&quot;activity&quot;,&quot;new_module&quot;));</b>
+<b class="nc"><i class="no-highlight">60</i>&nbsp;                    overridePendingTransition(0,0);</b>
+<b class="nc"><i class="no-highlight">61</i>&nbsp;                    return true;</b>
+<i class="no-highlight">62</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">63</i>&nbsp;            return false;</b>
+<i class="no-highlight">64</i>&nbsp;        });
+<i class="no-highlight">65</i>&nbsp;
+<b class="nc"><i class="no-highlight">66</i>&nbsp;        modName = findViewById(R.id.moduleName);</b>
+<b class="nc"><i class="no-highlight">67</i>&nbsp;        modCode = findViewById(R.id.moduleCode);</b>
+<b class="nc"><i class="no-highlight">68</i>&nbsp;        modTeach = findViewById(R.id.moduleTName);</b>
+<b class="nc"><i class="no-highlight">69</i>&nbsp;        createMod = findViewById(R.id.createCourse);</b>
+<i class="no-highlight">70</i>&nbsp;
+<b class="nc"><i class="no-highlight">71</i>&nbsp;        mAuth = FirebaseAuth.getInstance();</b>
+<i class="no-highlight">72</i>&nbsp;
+<b class="nc"><i class="no-highlight">73</i>&nbsp;        createMod.setOnClickListener(new View.OnClickListener() {</b>
+<i class="no-highlight">74</i>&nbsp;            @Override
+<i class="no-highlight">75</i>&nbsp;            public void onClick(View view) {
+<b class="nc"><i class="no-highlight">76</i>&nbsp;                createModule();</b>
+<b class="nc"><i class="no-highlight">77</i>&nbsp;                modName.setText(&quot;&quot;);</b>
+<b class="nc"><i class="no-highlight">78</i>&nbsp;                modCode.setText(&quot;&quot;);</b>
+<b class="nc"><i class="no-highlight">79</i>&nbsp;                modTeach.setText(&quot;&quot;);</b>
+<i class="no-highlight">80</i>&nbsp;            }
+<i class="no-highlight">81</i>&nbsp;        });
+<i class="no-highlight">82</i>&nbsp;
+<i class="no-highlight">83</i>&nbsp;        
+<i class="no-highlight">84</i>&nbsp;    }
+<i class="no-highlight">85</i>&nbsp;    @Override
+<i class="no-highlight">86</i>&nbsp;    public void onBackPressed()
+<i class="no-highlight">87</i>&nbsp;    {
+<i class="no-highlight">88</i>&nbsp;        /*
+<i class="no-highlight">89</i>&nbsp;        if(getIntent().getStringExtra(&quot;activity&quot;)==&quot;courses&quot;){
+<i class="no-highlight">90</i>&nbsp;            startActivity(new Intent(this, TeacherCourses.class));
+<i class="no-highlight">91</i>&nbsp;        }else{
+<i class="no-highlight">92</i>&nbsp;            startActivity(new Intent(this, TeacherAccount.class));
+<i class="no-highlight">93</i>&nbsp;        }
+<i class="no-highlight">94</i>&nbsp;        finish();
+<i class="no-highlight">95</i>&nbsp;         */
+<i class="no-highlight">96</i>&nbsp;    }
+<i class="no-highlight">97</i>&nbsp;
+<i class="no-highlight">98</i>&nbsp;    public void createModule(){
+<b class="nc"><i class="no-highlight">99</i>&nbsp;        String mName = modName.getText().toString().trim();</b>
+<b class="nc"><i class="no-highlight">100</i>&nbsp;        String mCode = modCode.getText().toString().trim();</b>
+<b class="nc"><i class="no-highlight">101</i>&nbsp;        String mTeach = modTeach.getText().toString().trim();</b>
+<i class="no-highlight">102</i>&nbsp;
+<b class="nc"><i class="no-highlight">103</i>&nbsp;        if(TextUtils.isEmpty(mName)){</b>
+<b class="nc"><i class="no-highlight">104</i>&nbsp;            modName.setError(&quot;Course name cannot be empty&quot;);</b>
+<b class="nc"><i class="no-highlight">105</i>&nbsp;            modName.requestFocus();</b>
+<b class="nc"><i class="no-highlight">106</i>&nbsp;        }else if(TextUtils.isEmpty(mCode)){</b>
+<b class="nc"><i class="no-highlight">107</i>&nbsp;            modCode.setError(&quot;Course code cannot be empty&quot;);</b>
+<b class="nc"><i class="no-highlight">108</i>&nbsp;            modCode.requestFocus();</b>
+<b class="nc"><i class="no-highlight">109</i>&nbsp;        }else if(TextUtils.isEmpty(mTeach)){</b>
+<b class="nc"><i class="no-highlight">110</i>&nbsp;            modTeach.setError(&quot;Instructors name cannot be empty&quot;);</b>
+<b class="nc"><i class="no-highlight">111</i>&nbsp;            modTeach.requestFocus();</b>
+<i class="no-highlight">112</i>&nbsp;        }else{
+<b class="nc"><i class="no-highlight">113</i>&nbsp;            databaseReference = FirebaseDatabase.getInstance().getReference().child(&quot;All Courses&quot;);</b>
+<b class="nc"><i class="no-highlight">114</i>&nbsp;            module Module = new module(mName, mCode, mTeach, 0);</b>
+<b class="nc"><i class="no-highlight">115</i>&nbsp;            databaseReference.child(mCode).setValue(Module);</b>
+<b class="nc"><i class="no-highlight">116</i>&nbsp;            Toast.makeText(Teacher_New_Module.this, &quot;Course created&quot;, Toast.LENGTH_SHORT).show();</b>
+<i class="no-highlight">117</i>&nbsp;
+<b class="nc"><i class="no-highlight">118</i>&nbsp;            databaseReference1 = FirebaseDatabase.getInstance().getReference().child(&quot;Group by teachers&quot;);</b>
+<b class="nc"><i class="no-highlight">119</i>&nbsp;            module Module1 = new module(mName, mCode, mTeach, 0);</b>
+<b class="nc"><i class="no-highlight">120</i>&nbsp;            databaseReference1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(mCode).setValue(Module1);</b>
+<i class="no-highlight">121</i>&nbsp;
+<i class="no-highlight">122</i>&nbsp;        }
+<i class="no-highlight">123</i>&nbsp;    }
+<i class="no-highlight">124</i>&nbsp;    @Override
+<i class="no-highlight">125</i>&nbsp;    protected void onStart(){
+<b class="nc"><i class="no-highlight">126</i>&nbsp;        super.onStart();</b>
+<b class="nc"><i class="no-highlight">127</i>&nbsp;        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();</b>
+<b class="nc"><i class="no-highlight">128</i>&nbsp;        if(user==null){</b>
+<b class="nc"><i class="no-highlight">129</i>&nbsp;            startActivity(new Intent(Teacher_New_Module.this,login.class));</b>
+<i class="no-highlight">130</i>&nbsp;        }
+<i class="no-highlight">131</i>&nbsp;    }
+<i class="no-highlight">132</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+<<<<<<< HEAD
+    <div style="float:right;">generated on 2022-05-31 15:04</div>
+=======
+    <div style="float:right;">generated on 2022-05-31 17:08</div>
+>>>>>>> thapelo
+</div>
+</body>
+</html>

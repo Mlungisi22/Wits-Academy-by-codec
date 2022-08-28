@@ -1,0 +1,272 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > register</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+    @import "../../.css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../.js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.login</a>
+</div>
+
+<h1>Coverage Summary for Class: register (com.example.login)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">register</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/26)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">register$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">register$1$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/7)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/41)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.example.login;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import androidx.annotation.NonNull;
+<i class="no-highlight">4</i>&nbsp;        import androidx.appcompat.app.AppCompatActivity;
+<i class="no-highlight">5</i>&nbsp;        import androidx.core.content.ContextCompat;
+<i class="no-highlight">6</i>&nbsp;
+<i class="no-highlight">7</i>&nbsp;        import android.content.Intent;
+<i class="no-highlight">8</i>&nbsp;        import android.os.Bundle;
+<i class="no-highlight">9</i>&nbsp;        import android.text.TextUtils;
+<i class="no-highlight">10</i>&nbsp;        import android.util.Patterns;
+<i class="no-highlight">11</i>&nbsp;        import android.widget.Button;
+<i class="no-highlight">12</i>&nbsp;        import android.widget.EditText;
+<i class="no-highlight">13</i>&nbsp;        import android.widget.RadioButton;
+<i class="no-highlight">14</i>&nbsp;        import android.widget.RadioGroup;
+<i class="no-highlight">15</i>&nbsp;        import android.widget.TextView;
+<i class="no-highlight">16</i>&nbsp;        import android.widget.Toast;
+<i class="no-highlight">17</i>&nbsp;
+<i class="no-highlight">18</i>&nbsp;        import com.google.android.gms.tasks.OnCompleteListener;
+<i class="no-highlight">19</i>&nbsp;        import com.google.android.gms.tasks.Task;
+<i class="no-highlight">20</i>&nbsp;        import com.google.android.material.textfield.TextInputEditText;
+<i class="no-highlight">21</i>&nbsp;        import com.google.firebase.auth.AuthResult;
+<i class="no-highlight">22</i>&nbsp;        import com.google.firebase.auth.FirebaseAuth;
+<i class="no-highlight">23</i>&nbsp;        import com.google.firebase.database.FirebaseDatabase;
+<i class="no-highlight">24</i>&nbsp;
+<b class="nc"><i class="no-highlight">25</i>&nbsp;public class register extends AppCompatActivity {</b>
+<i class="no-highlight">26</i>&nbsp;
+<i class="no-highlight">27</i>&nbsp;    //Declare all views including Firebase
+<i class="no-highlight">28</i>&nbsp;
+<i class="no-highlight">29</i>&nbsp;    private EditText eRegEmail;
+<i class="no-highlight">30</i>&nbsp;    private EditText eRegPassword;
+<i class="no-highlight">31</i>&nbsp;    private Button btnRegister;
+<i class="no-highlight">32</i>&nbsp;    private TextView tvLoginHere;
+<i class="no-highlight">33</i>&nbsp;    private RadioGroup radioGroup;
+<i class="no-highlight">34</i>&nbsp;    private RadioButton radioButton;
+<i class="no-highlight">35</i>&nbsp;    private FirebaseAuth mAuth;
+<i class="no-highlight">36</i>&nbsp;
+<i class="no-highlight">37</i>&nbsp;
+<i class="no-highlight">38</i>&nbsp;    @Override
+<i class="no-highlight">39</i>&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc"><i class="no-highlight">40</i>&nbsp;        super.onCreate(savedInstanceState);</b>
+<b class="nc"><i class="no-highlight">41</i>&nbsp;        setContentView(R.layout.activity_register);</b>
+<i class="no-highlight">42</i>&nbsp;
+<b class="nc"><i class="no-highlight">43</i>&nbsp;        getWindow().setStatusBarColor(ContextCompat.getColor(register.this, R.color.teal_700));  //set status bar color</b>
+<i class="no-highlight">44</i>&nbsp;
+<i class="no-highlight">45</i>&nbsp;        //intilise all view and get instance of Firebase
+<b class="nc"><i class="no-highlight">46</i>&nbsp;        radioGroup = findViewById(R.id.radioGroup);</b>
+<b class="nc"><i class="no-highlight">47</i>&nbsp;        eRegEmail=findViewById(R.id.etRegEmail);</b>
+<b class="nc"><i class="no-highlight">48</i>&nbsp;        eRegPassword=findViewById(R.id.etRegPass);</b>
+<b class="nc"><i class="no-highlight">49</i>&nbsp;        tvLoginHere=findViewById(R.id.tvLoginHere);</b>
+<b class="nc"><i class="no-highlight">50</i>&nbsp;        btnRegister=findViewById(R.id.btnRegister);</b>
+<b class="nc"><i class="no-highlight">51</i>&nbsp;        mAuth=FirebaseAuth.getInstance();</b>
+<i class="no-highlight">52</i>&nbsp;
+<i class="no-highlight">53</i>&nbsp;        //Implement the onClickListerner for the register button
+<b class="nc"><i class="no-highlight">54</i>&nbsp;        btnRegister.setOnClickListener(view -&gt;{</b>
+<b class="nc"><i class="no-highlight">55</i>&nbsp;            createUser();                                                                               //call function on Register button click</b>
+<i class="no-highlight">56</i>&nbsp;        });
+<i class="no-highlight">57</i>&nbsp;
+<i class="no-highlight">58</i>&nbsp;        //Implement the onClickListerner for the re
+<b class="nc"><i class="no-highlight">59</i>&nbsp;        tvLoginHere.setOnClickListener(view -&gt;{</b>
+<b class="nc"><i class="no-highlight">60</i>&nbsp;            startActivity(new Intent(register.this,login.class));</b>
+<i class="no-highlight">61</i>&nbsp;        });
+<i class="no-highlight">62</i>&nbsp;    }
+<i class="no-highlight">63</i>&nbsp;
+<i class="no-highlight">64</i>&nbsp;    /*Create user function*/
+<i class="no-highlight">65</i>&nbsp;    private void createUser() {
+<i class="no-highlight">66</i>&nbsp;
+<i class="no-highlight">67</i>&nbsp;        //Get checked occupation, teacher or student to create account for
+<b class="nc"><i class="no-highlight">68</i>&nbsp;        int radioID = radioGroup.getCheckedRadioButtonId();</b>
+<b class="nc"><i class="no-highlight">69</i>&nbsp;        radioButton = findViewById(radioID);</b>
+<b class="nc"><i class="no-highlight">70</i>&nbsp;        String occupation = radioButton.getText().toString();</b>
+<i class="no-highlight">71</i>&nbsp;
+<i class="no-highlight">72</i>&nbsp;        //Get email and password from user
+<b class="nc"><i class="no-highlight">73</i>&nbsp;        String email = eRegEmail.getText().toString().trim();</b>
+<b class="nc"><i class="no-highlight">74</i>&nbsp;        String password = eRegPassword.getText().toString().trim();</b>
+<i class="no-highlight">75</i>&nbsp;
+<i class="no-highlight">76</i>&nbsp;
+<b class="nc"><i class="no-highlight">77</i>&nbsp;        if(TextUtils.isEmpty(email)){</b>
+<b class="nc"><i class="no-highlight">78</i>&nbsp;            eRegEmail.setError(&quot;Email cannot be empty&quot;);</b>
+<b class="nc"><i class="no-highlight">79</i>&nbsp;            eRegEmail.requestFocus();                                                               //If email is empty notify user and request input by requesting focus</b>
+<b class="nc"><i class="no-highlight">80</i>&nbsp;        }else if(TextUtils.isEmpty(password)){</b>
+<b class="nc"><i class="no-highlight">81</i>&nbsp;            eRegPassword.setError(&quot;Password cannot be empty&quot;);</b>
+<b class="nc"><i class="no-highlight">82</i>&nbsp;            eRegPassword.requestFocus();                                                            //Do the same as above for password</b>
+<i class="no-highlight">83</i>&nbsp;        }else{
+<b class="nc"><i class="no-highlight">84</i>&nbsp;            mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener&lt;AuthResult&gt;() {       //If they not empty create user with email and passoword which is not stored on database</b>
+<i class="no-highlight">85</i>&nbsp;                @Override
+<i class="no-highlight">86</i>&nbsp;                public void onComplete(@NonNull Task&lt;AuthResult&gt; task) {
+<b class="nc"><i class="no-highlight">87</i>&nbsp;                    if(task.isSuccessful()){</b>
+<b class="nc"><i class="no-highlight">88</i>&nbsp;                        User user = new User(password,email);                                                                       //Instantiate a new user object</b>
+<i class="no-highlight">89</i>&nbsp;
+<b class="nc"><i class="no-highlight">90</i>&nbsp;                        FirebaseDatabase.getInstance().getReference(occupation)</b>
+<b class="nc"><i class="no-highlight">91</i>&nbsp;                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())                                        //Add user to table in Firebase based on their occupation including their ID</b>
+<b class="nc"><i class="no-highlight">92</i>&nbsp;                                .setValue(user).addOnCompleteListener(new OnCompleteListener&lt;Void&gt;() {                                 //Can be on Success Listener</b>
+<i class="no-highlight">93</i>&nbsp;                            @Override
+<i class="no-highlight">94</i>&nbsp;                            public void onComplete(@NonNull Task&lt;Void&gt; task) {
+<b class="nc"><i class="no-highlight">95</i>&nbsp;                                if(task.isSuccessful()){</b>
+<b class="nc"><i class="no-highlight">96</i>&nbsp;                                    if(occupation.equals(&quot;Teacher&quot;)){</b>
+<b class="nc"><i class="no-highlight">97</i>&nbsp;                                        Toast.makeText(register.this,&quot;Teacher&#39;s account registered successfully&quot;,Toast.LENGTH_SHORT).show();            //If user added successfully then make toast for Teacher or student</b>
+<i class="no-highlight">98</i>&nbsp;                                    }else{
+<b class="nc"><i class="no-highlight">99</i>&nbsp;                                        Toast.makeText(register.this,&quot;Student&#39;s account registered successfully&quot;,Toast.LENGTH_SHORT).show();</b>
+<i class="no-highlight">100</i>&nbsp;                                    }
+<i class="no-highlight">101</i>&nbsp;
+<b class="nc"><i class="no-highlight">102</i>&nbsp;                                    startActivity(new Intent(register.this,login.class));                               //Move user to log in page</b>
+<i class="no-highlight">103</i>&nbsp;                                }else{
+<b class="nc"><i class="no-highlight">104</i>&nbsp;                                    Toast.makeText(register.this,&quot;Registration Error: &quot;+task.getException().getMessage(),Toast.LENGTH_SHORT).show();        //If unsuccessful registering</b>
+<i class="no-highlight">105</i>&nbsp;                                }
+<i class="no-highlight">106</i>&nbsp;                            }
+<i class="no-highlight">107</i>&nbsp;                        });
+<i class="no-highlight">108</i>&nbsp;
+<i class="no-highlight">109</i>&nbsp;
+<b class="nc"><i class="no-highlight">110</i>&nbsp;                    }else{</b>
+<b class="nc"><i class="no-highlight">111</i>&nbsp;                        Toast.makeText(register.this,&quot;Registration Error: &quot;+task.getException().getMessage(),Toast.LENGTH_SHORT).show();                //Could&#39;nt create user</b>
+<i class="no-highlight">112</i>&nbsp;
+<i class="no-highlight">113</i>&nbsp;                    }
+<i class="no-highlight">114</i>&nbsp;                }
+<i class="no-highlight">115</i>&nbsp;            });
+<i class="no-highlight">116</i>&nbsp;        }
+<i class="no-highlight">117</i>&nbsp;    }
+<i class="no-highlight">118</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+<<<<<<< HEAD
+    <div style="float:right;">generated on 2022-05-31 15:04</div>
+=======
+    <div style="float:right;">generated on 2022-05-31 17:08</div>
+>>>>>>> thapelo
+</div>
+</body>
+</html>
